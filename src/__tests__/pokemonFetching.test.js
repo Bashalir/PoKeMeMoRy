@@ -1,9 +1,8 @@
 import { PokemonHandler } from "../app/usecases/pokemon.handler";
 import { PokemonBuilder } from "../app/usecases/pokemon.builder";
-import { InMemoryPokemonLoader } from "../app/adapters/secondaries/inmemory/InMemoryPokemonLoader";
-import { stubPokemons } from "../__tests__/stubs/stubPokemons";
+import { InMemoryPokemonLoader } from "../app/adapters/secondaries/inmemory/InMemoryPokemon.loader";
 
-import makePokemon from "../pokemon";
+import makePokemon from "../card";
 import makeMain from "../main";
 
 describe("Pokemon handler fetches", () => {

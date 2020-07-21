@@ -1,12 +1,15 @@
-import makePokemon from "./pokemon";
+import Card from "./card";
 
 const makeMain = (pokemonHandler) => {
   let main = document.createElement("main");
-
-  pokemonHandler.all().subscribe((pokemons) => {
-    pokemons.map((pokemon) => {
-      main.appendChild(makePokemon(pokemon.name));
-    });
+  pokemonHandler.get(1).subscribe((pokemon) => {
+    main.appendChild(Card(pokemon));
+  });
+  pokemonHandler.get(2).subscribe((pokemon) => {
+    main.appendChild(Card(pokemon));
+  });
+  pokemonHandler.get(58).subscribe((pokemon) => {
+    main.appendChild(Card(pokemon));
   });
   return main;
 };
